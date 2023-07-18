@@ -26,7 +26,6 @@ const testFoodOrder = [
 // const accumulator = (acc, curr) => acc + curr;
 
 const reduceFromScratch = (arr) => {
-  // do something
   let accumulator = 0;
   for (item of arr) {
     accumulator += item.amount;
