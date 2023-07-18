@@ -1,15 +1,12 @@
-function mapFromScratch(arr, func) {
-  const manipArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    manipArr.push(func(arr[i]));
-  }
-  return manipArr;
+function mapFromScratch(arr) {
+  const newArr = arr.map((element) => element * 2);
+  return newArr;
 }
 
 const exArr1 = [1, 2, 3, 4, 5];
-const exFunc1 = (element) => element * 2;
+// const exFunc1 = (element) => element * 2;
 
-console.log(mapFromScratch(exArr1, exFunc1));
+console.log(mapFromScratch(exArr1));
 
 const testFoodOrder = [
   { order: "burger", amount: 15.1 },
@@ -26,27 +23,22 @@ const testFoodOrder = [
 // const accumulator = (acc, curr) => acc + curr;
 
 const reduceFromScratch = (arr) => {
-  // do something
-  let accumulator = 0;
+  const amounts = [];
   for (item of arr) {
-    accumulator += item.amount;
+    amounts.push(item.amount);
   }
+  let accumulator = amounts.reduce((acc, curr) => acc + curr, 0);
   return accumulator;
 };
 
 console.log(reduceFromScratch(testFoodOrder));
 
-const testCondition = (element) => element > 10;
+// const testCondition = (element) => element > 10;
 const unfilteredArray = [1, 2, 3, 4, 4, 5, 4, 6, 7, 8, 9, 10, 44, 55, 2, 34];
 
-const filterFromScratch = (arr, func) => {
-  const returnArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (func(arr[i])) {
-      returnArr.push(arr[i]);
-    }
-  }
-  return returnArr;
+const filterFromScratch = (arr) => {
+  const filtered = arr.filter((element) => element > 10);
+  return filtered;
 };
 
-console.log(filterFromScratch(unfilteredArray, testCondition));
+console.log(filterFromScratch(unfilteredArray));
